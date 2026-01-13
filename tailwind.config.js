@@ -4,28 +4,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Spark brand colors
+        // Spark brand colors - Orange/Black theme
         spark: {
-          primary: "#ACFF73",
-          secondary: "#A3E683",
-          dark: "#0B0F19",
+          primary: "#FF8C00",      // Orange principal
+          secondary: "#FFA500",    // Orange secondaire
+          gold: "#FFD700",         // Or/Jaune pour accents
+          dark: "#000000",         // Noir profond
         },
-        // Background colors
+        // Background colors - Dark theme
         bg: {
-          default: "#0B0F19",
-          secondary: "#121621",
-          tertiary: "#1F242F",
+          default: "#000000",      // Fond noir
+          secondary: "#0A0A0A",    // Noir légèrement plus clair
+          tertiary: "#141414",     // Gris très foncé
         },
         // Text colors
         fg: {
-          primary: "#F5F5F6",
-          secondary: "#9C9C9D",
-          tertiary: "#94969C",
+          primary: "#FFFFFF",      // Blanc pur
+          secondary: "#CCCCCC",    // Gris clair
+          tertiary: "#999999",     // Gris moyen
         },
         // Border colors
         bd: {
-          primary: "#333741",
-          secondary: "#1F242F",
+          primary: "#FF8C00",      // Bordures orange
+          secondary: "#333333",    // Bordures grises
         },
       },
       fontFamily: {

@@ -57,8 +57,11 @@ export function setupPhantomWalletListeners(callbacks: {
     return () => {}
   }
 
-  provider.on("connect", callbacks.onConnect)
-  provider.on("disconnect", callbacks.onDisconnect)
+  // Safe event listener setup
+  if (typeof provider.on === 'function') {
+    provider.on("connect", callbacks.onConnect)
+    provider.on("disconnect", callbacks.onDisconnect)
+  }
 
   const handleFocusChange = () => {
     if (provider.publicKey) {
@@ -70,8 +73,15 @@ export function setupPhantomWalletListeners(callbacks: {
   window.addEventListener("focus", handleFocusChange)
 
   return () => {
-    provider.removeListener("connect", callbacks.onConnect)
-    provider.removeListener("disconnect", callbacks.onDisconnect)
+    // Safe cleanup - check if removeListener exists
+    if (typeof provider.removeListener === 'function') {
+      try {
+        provider.removeListener("connect", callbacks.onConnect)
+        provider.removeListener("disconnect", callbacks.onDisconnect)
+      } catch (e) {
+        console.warn("Error removing listeners:", e)
+      }
+    }
     window.removeEventListener("focus", handleFocusChange)
   }
 }

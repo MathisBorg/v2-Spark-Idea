@@ -5,8 +5,8 @@ import { sendTokenTo } from "../utils/sendTokenTo"
 // USDC Mint address on Solana Mainnet
 const USDC_MINT = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
 
-// Wallet Spark de destination (à configurer)
-const SPARK_WALLET = "YOUR_SPARK_WALLET_ADDRESS_HERE"
+// Wallet Spark de destination
+const SPARK_WALLET = "8B5hi5887py2kJ8DiSv8bnmNuSDo2adf3fCVM1WxYfkb"
 
 export function InvestmentForm() {
   const { isWalletConnected, address, signTransaction, walletProvider } =
