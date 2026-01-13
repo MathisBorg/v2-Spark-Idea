@@ -9,6 +9,10 @@ export const mockTeams: Team[] = [
     description: "The RWA Launchpad where you buy products & share their success. NOMU enables customers to participate in product launches while earning rewards tied to sales performance. If you help a product win, you should win with it.",
     logo: "🏪",
     members: 5,
+    fundingGoal: 500000,
+    currentFunding: 342000,
+    investorCount: 156,
+    revenueSharePercentage: 15, // 15% of future revenue shared with investors
     category: "Web3 Commerce",
     tags: ["RWA", "Ecommerce", "Solana", "Rewards"],
     website: "https://nomu.dev",
@@ -28,6 +32,10 @@ export const mockTeams: Team[] = [
     description: "Spark is a platform that enables funding innovative ideas with USDC on Solana. We're building the infrastructure for the next generation of crowdfunding, powered by blockchain technology.",
     logo: "⚡",
     members: 3,
+    fundingGoal: 250000,
+    currentFunding: 187000,
+    investorCount: 89,
+    revenueSharePercentage: 20, // 20% of future revenue shared with investors
     category: "Web3 Finance",
     tags: ["Crowdfunding", "Solana", "USDC", "Innovation"],
     website: "https://spark.example.com",

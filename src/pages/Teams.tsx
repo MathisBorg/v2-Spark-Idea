@@ -15,6 +15,8 @@ export function Teams() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {mockTeams.map((team) => {
+          const fundingPercentage = Math.round((team.currentFunding / team.fundingGoal) * 100)
+
           return (
             <Link
               key={team.id}
@@ -49,13 +51,41 @@ export function Teams() {
                 ))}
               </div>
 
+              {/* Funding Progress */}
+              <div className="mb-4">
+                <div className="flex justify-between text-sm mb-2">
+                  <span className="text-fg-secondary">Revenue Share Funding</span>
+                  <span className="text-spark-primary font-semibold">{fundingPercentage}%</span>
+                </div>
+                <div className="w-full bg-bg-tertiary rounded-full h-2 mb-2">
+                  <div
+                    className="bg-spark-primary h-2 rounded-full transition-all"
+                    style={{ width: `${Math.min(fundingPercentage, 100)}%` }}
+                  />
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-fg-tertiary">
+                    ${(team.currentFunding / 1000).toFixed(0)}K raised
+                  </span>
+                  <span className="text-fg-tertiary">
+                    ${(team.fundingGoal / 1000).toFixed(0)}K goal
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-spark-primary/10 border border-spark-primary/20 rounded-lg p-3 mb-4">
+                <div className="text-spark-primary text-sm font-semibold text-center">
+                  {team.revenueSharePercentage}% Future Revenue Share
+                </div>
+              </div>
+
               <div className="flex items-center justify-between text-sm pt-4 border-t border-bd-secondary">
                 <div className="text-fg-tertiary">
-                  👥 {team.members} members
+                  👥 {team.members} members · 💰 {team.investorCount} investors
                 </div>
                 {team.website && (
                   <div className="text-spark-primary font-semibold">
-                    Visit Website →
+                    View Details →
                   </div>
                 )}
               </div>
